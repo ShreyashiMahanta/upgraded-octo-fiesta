@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book AR</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name = "apple-mobile-web-app-capable" content="yes" />
+      
+     
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="./play-on-click.js"></script>
+    </head>
+    <body>
+        <div class="arjs">  
+            <div>HAVE PATIENCE! ITS LOADING......</div>
+        </div>
+        <a-scene vr-mode-ui = "enabled : false;"
+        renderer = "logarithmicDepthBuffer : true;" embedded arjs = "trackingMethod : best; sourceType : webcam; debugUIEnabled : false;">
+    
+        <a-assets>
+            <a-asset-item id = "martian_rover" src = "./assets/rover/scene.gltf"></a-asset-item>
+        </a-assets>
+        <a-nft
+        id = "nft1"
+        type = "nft"
+        url = "./marker/book"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
+        >
+    
+        <a-entity id = "rover" gltf-model = "#martian_rover"></a-entity>
+    
+    </a-nft>
+
+    </a-scene>
+    </body>
+</html>
